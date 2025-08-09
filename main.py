@@ -1,22 +1,28 @@
 import requests
 
+# Base Url 
+Base_URL = "https://openlibrary.org/subjects"
+
+
+# Getting Libraries
+def get_Topics():
+    URL = f"{Base_URL}/architecture.json"
+    response = requests.get(URL)
+    print(response)
+
+    if response.status_code == 200:
+        pass
+    else:
+        print(f"retrieval failed {response.status_code}")
+get_Topics()
+
 # Arriving program
-Home_message = """ _____ _           _                            _                 _    
-|  ___(_)_ __   __| |  _   _  ___  _   _ _ __  | |__   ___   ___ | | __
-| |_  | | '_ \ / _` | | | | |/ _ \| | | | '__| | '_ \ / _ \ / _ \| |/ /
-|  _| | | | | | (_| | | |_| | (_) | |_| | |    | |_) | (_) | (_) |   < 
-|_|   |_|_| |_|\__,_|  \__, |\___/ \__,_|_|    |_.__/ \___/ \___/|_|\_\
-                                    |___/                                           """
+print("Welcome To Your Book recommendation Center")
+print("")
+Topic = input("What Topic Are You interested in? (Comp Science Or Programming) ")
 
-print(Home_message)
+if Topic == "Comp Science" or "comp science":
+    print("alright")
 
-# search question
 
-print("What Book are you searching for?")
-book = input()
 
-if book == True:
-    
-    print("i have found the book in ")
-else:
-    print('sorry could not find it')
